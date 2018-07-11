@@ -1,0 +1,118 @@
+// creation de keyspace personne :
+CREATE KEYSPACE personnes WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
+
+// creation de ksp test (drop after) :
+CREATE KEYSPACE test WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
+
+// creation de mm ksp test ==== ERROR
+CREATE KEYSPACE test WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
+
+// drop de ksp test :
+DROP KEYSPACE  IF EXISTS test;
+
+// drop de ksp test déje supprimé === ERROR :
+DROP KEYSPACE  IF EXISTS test;
+
+//creation du table test sans use ksp :
+CREATE TABLE test( p_id int PRIMARY KEY, p_name text)WITH comment='droped after';
+
+//creation after use :
+use personnes ;
+CREATE TABLE test( p_id int PRIMARY KEY, p_name text)WITH comment='droped after';
+
+// doubl creation de la table test === ERROR
+CREATE TABLE test( p_id int PRIMARY KEY, p_name text)WITH comment='droped after';
+
+// creation de la table etudiant :
+CREATE TABLE etudiant( id_etd int PRIMARY KEY, nom_etd text , ville_etd text , admis_etd boolean)WITH comment='démonstration';
+
+// drop de table test :
+DROP TABLE IF EXISTS test;
+
+// double drop === ERROR :
+DROP TABLE IF EXISTS test;
+
+// insertion de data dans la table test === ERROR :
+INSERT INTO test (emp_id, emp_name, emp_city,emp_phone, emp_sal) VALUES(5,'said', 'tanger', 063745264, 6000);
+
+// insertion de data dans la table etudiant/ colonne inconnue === ERROR
+INSERT INTO etudiant (id_etd, nom_etd, ville_etd, XXXXXXXXXXXXXX ) VALUES(5,'saidi', 'tanger', 063745264);
+
+//insertion de data dans la table etudiant/ colonnes < values === ERROR :
+INSERT INTO etudiant (id_etd, nom_etd) VALUES(5,'saidi', 'tanger');
+
+//insertion de data dans la table etudiant/ colonnes > values === ERROR :
+INSERT INTO etudiant (id_etd, nom_etd, ville_etd) VALUES(5,'saidi');
+
+//insertion de data dans la table etudiant/ incompatible type of data === ERROR :
+INSERT INTO etudiant (id_etd, nom_etd, ville_etd) VALUES('5','saidi', 'tanger');
+
+//insertion de data dans la table etudiant sans error :
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(1,'sennane', 'benimellal' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(2,'Chmiti', 'rabat' , false);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(3,'Douiri', 'casa' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(4,'narjiss', 'benimellal' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(5,'Boustaoui', 'benimellal' , true);
+
+// insertion de qlq colones :
+INSERT INTO etudiant (id_etd,nom_etd,admis_etd) VALUES(6,'birouti',  true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd) VALUES(7,'Mokssit', 'casa' );
+
+// select pour voire :
+select * from etudiant ;
+
+
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(8,'Bouchikhi', 'tanger' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(9,'Arfaoui', 'casa' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(10,'Kardid', 'benimellal' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(11,'Yassine', 'kenitra' , true);
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(12,'Badreddine', 'casa' , false);
+
+// insertion avec clée primaire déja existante === ERROR
+INSERT INTO etudiant (id_etd,nom_etd,ville_etd,admis_etd) VALUES(1,'sennane', 'benimellal' , true);
+
+// Lecture de toute la data inserée :
+select * from etudiant ;
+
+// lecture de qlqs colonnes de data :
+select id_etd,admis_etd,nom_etd from etudiant ;
+
+// selection de colonnes inexistantes === ERROR :
+select XXXXXXXXXXX,admis_etd,nom_etd from etudiant ;
+
+// selection avec where clause (op) ;
+select * from etudiant where id_etd <= 5 ;
+
+// selection avec where clause (IN) ;
+select id_etd,admis_etd,nom_etd from etudiant where id_etd in( 2 , 10 , 3) ;
+
+// select avec colone inexistante dans where clause == ERROR :
+select id_etd,admis_etd,nom_etd from etudiant where XXXXX in( 2 , 10 , 3) ;
+
+// select avec colonne in where clause not primary key === ERROR :
+select id_etd,admis_etd,nom_etd from etudiant where admis_etd = true ;
+
+// select avec incompatible type de comparaison in where clause === ERROR :
+select * from etudiant where id_etd <= true ;
+
+
+
+//										##	####  #####
+//									   # #	#		#
+//									  ####	####	#
+//									 #	 #	   #	#
+//									#	 #	####	#		
+
+
+
+// qlqs test de l'AST :
+select * from etudiant where id_etd <= AST [  ( 1 + 3 ) * 2 ] ;
+
+select id_etd,admis_etd,nom_etd from etudiant where id_etd in( 2 , AST [  ( 1 + 3 ) * 2 ] , AST [ 1 + 2 ]) ;
+
+
+// finalement drop keyspace personnes et ses tables :
+DROP KEYSPACE  IF EXISTS personnes;
+
+// puis exit :
+exit ;

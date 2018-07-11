@@ -1,0 +1,37 @@
+cqlsh -u cassandra -p cassandra ;
+create role afaf with password='taddist' and login=true and superuser=true ;
+cqlsh -u afaf -p taddist ;
+list roles ;
+create role nisrine with password='tad' and login=false  ;
+list roles of nisrine ;
+cqlsh -u nisrine -p tad ;
+
+alter role nisrine with password='tad' and login=true and superuser=false ;
+//Error 
+create role ensias ;
+
+cqlsh -u afaf -p taddist ;
+drop role nisrine ;
+
+
+alter role ensias with password='tad'  ;
+//ERROR
+cqlsh -u ensias -p tad ;
+
+//ERROR
+cqlsh -u afaf -p ta ;
+
+
+ERRORS :
+
+	Acces Denied  :
+		if the account have login=false
+	Role Exists already :
+		if we try to create a role with an existing name 
+	Role Not Exists : 
+		if we try to alter or drop a role that doens't exist 
+	Incorrect Password :
+		if we try to connect to an existing account with wrong password 
+	File Not Exists :
+		if we try to do an action and the Superuser_current.json doesn't exist
+	 

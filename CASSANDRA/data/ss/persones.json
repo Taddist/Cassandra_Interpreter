@@ -1,0 +1,18 @@
+{
+    "desc": {
+        "nom_t": "persones",
+        "nb_lines_t": 0,
+        "nb_columns_t": 2,
+        "columns_t": {
+            "p_id": {
+                "type_c": "int",
+                "prk_c": true
+            },
+            "p_name": {
+                "type_c": "string",
+                "prk_c": false
+            }
+        }
+    },
+    "data": {}
+}

@@ -1,0 +1,8 @@
+x int ;
+x bool 0 ;
+f bool ;
+t bool ;
+begin
+aa = f+f ;
+f = 22 ;
+end

@@ -1,0 +1,134 @@
+[
+    {
+        "properties": {
+            "property1": "value1",
+            "property2": "value2",
+            "property3": "value3"
+        },
+        "nom_keyspace": "emp",
+        "nb_tables": 3
+    },
+    {
+        "table1": {
+            "desc_table": {
+                "columns_t": {
+                    "emp_name": {
+                        "type_c": "string",
+                        "prk_c": false
+                    },
+                    "emp_id": {
+                        "type_c": "integer",
+                        "prk_c": true
+                    },
+                    "emp_city": {
+                        "type_c": "string",
+                        "prk_c": false
+                    },
+                    "emp_sal": {
+                        "type_c": "integer",
+                        "prk_c": false
+                    },
+                    "emp_phone": {
+                        "type_c": "integer",
+                        "prk_c": false
+                    }
+                },
+                "pro_desc_2": {}
+            },
+            "data": {
+                "4": {
+                    "emp_name": "test2",
+                    "emp_id": "4",
+                    "emp_city": "agadir",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                },
+                "2": {
+                    "emp_name": "test3",
+                    "emp_id": "2",
+                    "emp_city": "casablanca",
+                    "emp_sal": "1000000",
+                    "emp_phone": "06217476"
+                },
+                "5": {
+                    "emp_name": "test5",
+                    "emp_id": "4",
+                    "emp_city": "casablanca",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                },
+                "3": {
+                    "emp_name": "test",
+                    "emp_id": "3",
+                    "emp_city": "marrakesh",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                }
+            }
+        },
+        "table2": {
+            "desc_table": {
+                "columns_t": {
+                    "emp_name": {
+                        "type_c": "string",
+                        "prk_c": false
+                    },
+                    "emp_id": {
+                        "type_c": "integer",
+                        "prk_c": true
+                    },
+                    "emp_city": {
+                        "type_c": "string",
+                        "prk_c": false
+                    },
+                    "emp_sal": {
+                        "type_c": "integer",
+                        "prk_c": false
+                    },
+                    "emp_phone": {
+                        "type_c": "integer",
+                        "prk_c": false
+                    }
+                },
+                "pro_desc_2": {}
+            },
+            "data": {
+                "1": {
+                    "emp_name": "test161",
+                    "emp_id": "1",
+                    "emp_city": "rabat",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                },
+                "4": {
+                    "emp_name": "test2",
+                    "emp_id": "4",
+                    "emp_city": "agadir",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                },
+                "2": {
+                    "emp_name": "test3",
+                    "emp_id": "2",
+                    "emp_city": "casablanca",
+                    "emp_sal": "1000000",
+                    "emp_phone": "06217476"
+                },
+                "3": {
+                    "emp_name": "test",
+                    "emp_id": "3",
+                    "emp_city": "marrakesh",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                },
+                "5": {
+                    "emp_name": "test15",
+                    "emp_id": "1",
+                    "emp_city": "rabat",
+                    "emp_sal": "10000",
+                    "emp_phone": "06217476"
+                }
+            }
+        }
+    }
+]

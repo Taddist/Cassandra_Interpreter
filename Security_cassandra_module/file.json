@@ -1,0 +1,7 @@
+{
+				"1":{"emp_id":1,"emp_name":"test4","emp_city":"rabat","emp_sal":10000,"emp_phone":"06217476"},
+				"2":{"emp_id":2,"emp_name":"test3","emp_city":"casablanca","emp_sal":1000000,"emp_phone":"06217476"},
+				"3":{"emp_id":3,"emp_name":"test","emp_city":"marrakesh","emp_sal":10000,"emp_phone":"06217476"},
+				"4":{"emp_id":4,"emp_name":"test2","emp_city":"agadir","emp_sal":10000,"emp_phone":"06217476"}
+
+}

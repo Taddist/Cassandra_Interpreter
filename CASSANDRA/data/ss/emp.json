@@ -1,0 +1,66 @@
+{
+    "desc": {
+        "nom_t": "emp",
+        "nb_lines_t": 5,
+        "nb_columns_t": 5,
+        "columns_t": {
+            "emp_id": {
+                "type_c": "int",
+                "prk_c": true
+            },
+            "emp_name": {
+                "type_c": "string",
+                "prk_c": false
+            },
+            "emp_city": {
+                "type_c": "string",
+                "prk_c": false
+            },
+            "emp_sal": {
+                "type_c": "int",
+                "prk_c": false
+            },
+            "emp_phone": {
+                "type_c": "int",
+                "prk_c": false
+            }
+        }
+    },
+    "data": {
+        "1": [
+            1,
+            "'sennane'",
+            "'casa'",
+            4000,
+            123414
+        ],
+        "2": [
+            1,
+            "'zguindou'",
+            "'Hyderabad'",
+            3000,
+            2345
+        ],
+        "3": [
+            22,
+            "'alawi'",
+            "'rabat'",
+            null,
+            1258087746
+        ],
+        "4": [
+            4,
+            "'ali'",
+            "'agadir'",
+            3000,
+            1505812372
+        ],
+        "5": [
+            5,
+            "'said'",
+            "'tanger'",
+            6000,
+            63745264
+        ]
+    }
+}

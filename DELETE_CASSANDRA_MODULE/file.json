@@ -1,0 +1,147 @@
+[
+  {
+    "sha": "3c51112063a09151390e93916a4637a7e0427b32",
+    "commit": {
+      "author": {
+        "name": "Petri Lehtinen",
+        "email": "petri@digip.org",
+        "date": "2017-01-31T06:45:40Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2017-01-31T06:45:40Z"
+      },
+      "message": "Merge pull request #328 from npmccallum/master\n\nHelper functions for network IO",
+      "tree": {
+        "sha": "97ea7f5edc6348c3b669985ccfbbca13a4cc6a38",
+        "url": "https://api.github.com/repos/akheron/jansson/git/trees/97ea7f5edc6348c3b669985ccfbbca13a4cc6a38"
+      },
+      "url": "https://api.github.com/repos/akheron/jansson/git/commits/3c51112063a09151390e93916a4637a7e0427b32",
+      "comment_count": 0
+    },
+    "url": "https://api.github.com/repos/akheron/jansson/commits/3c51112063a09151390e93916a4637a7e0427b32",
+    "html_url": "https://github.com/akheron/jansson/commit/3c51112063a09151390e93916a4637a7e0427b32",
+    "comments_url": "https://api.github.com/repos/akheron/jansson/commits/3c51112063a09151390e93916a4637a7e0427b32/comments",
+    "author": {
+      "login": "akheron",
+      "id": 70927,
+      "avatar_url": "https://avatars.githubusercontent.com/u/70927?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/akheron",
+      "html_url": "https://github.com/akheron",
+      "followers_url": "https://api.github.com/users/akheron/followers",
+      "following_url": "https://api.github.com/users/akheron/following{/other_user}",
+      "gists_url": "https://api.github.com/users/akheron/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/akheron/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/akheron/subscriptions",
+      "organizations_url": "https://api.github.com/users/akheron/orgs",
+      "repos_url": "https://api.github.com/users/akheron/repos",
+      "events_url": "https://api.github.com/users/akheron/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/akheron/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "746c2c3a996a7f6e80bd19fe3de438637e6363e1",
+        "url": "https://api.github.com/repos/akheron/jansson/commits/746c2c3a996a7f6e80bd19fe3de438637e6363e1",
+        "html_url": "https://github.com/akheron/jansson/commit/746c2c3a996a7f6e80bd19fe3de438637e6363e1"
+      },
+      {
+        "sha": "1672bb5a65b711d84c8adb12144bb997a4da02d4",
+        "url": "https://api.github.com/repos/akheron/jansson/commits/1672bb5a65b711d84c8adb12144bb997a4da02d4",
+        "html_url": "https://github.com/akheron/jansson/commit/1672bb5a65b711d84c8adb12144bb997a4da02d4"
+      }
+    ]
+  },
+  {
+    "sha": "1672bb5a65b711d84c8adb12144bb997a4da02d4",
+    "commit": {
+      "author": {
+        "name": "Nathaniel McCallum",
+        "email": "npmccallum@redhat.com",
+        "date": "2017-01-26T16:23:31Z"
+      },
+      "committer": {
+        "name": "Nathaniel McCallum",
+        "email": "npmccallum@redhat.com",
+        "date": "2017-01-27T08:15:18Z"
+      },
+      "message": "Implement json_dumpfd() and json_loadfd()\n\nThe primary use of these functions is easy loading\nand dumping from stream sockets.\n\nSigned-off-by: Nathaniel McCallum <npmccallum@redhat.com>",
+      "tree": {
+        "sha": "97ea7f5edc6348c3b669985ccfbbca13a4cc6a38",
+        "url": "https://api.github.com/repos/akheron/jansson/git/trees/97ea7f5edc6348c3b669985ccfbbca13a4cc6a38"
+      },
+      "url": "https://api.github.com/repos/akheron/jansson/git/commits/1672bb5a65b711d84c8adb12144bb997a4da02d4",
+      "comment_count": 0
+    },
+    "url": "https://api.github.com/repos/akheron/jansson/commits/1672bb5a65b711d84c8adb12144bb997a4da02d4",
+    "html_url": "https://github.com/akheron/jansson/commit/1672bb5a65b711d84c8adb12144bb997a4da02d4",
+    "comments_url": "https://api.github.com/repos/akheron/jansson/commits/1672bb5a65b711d84c8adb12144bb997a4da02d4/comments",
+    "author": {
+      "login": "npmccallum",
+      "id": 288304,
+      "avatar_url": "https://avatars.githubusercontent.com/u/288304?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/npmccallum",
+      "html_url": "https://github.com/npmccallum",
+      "followers_url": "https://api.github.com/users/npmccallum/followers",
+      "following_url": "https://api.github.com/users/npmccallum/following{/other_user}",
+      "gists_url": "https://api.github.com/users/npmccallum/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/npmccallum/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/npmccallum/subscriptions",
+      "organizations_url": "https://api.github.com/users/npmccallum/orgs",
+      "repos_url": "https://api.github.com/users/npmccallum/repos",
+      "events_url": "https://api.github.com/users/npmccallum/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/npmccallum/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "npmccallum",
+      "id": 288304,
+      "avatar_url": "https://avatars.githubusercontent.com/u/288304?v=3",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/npmccallum",
+      "html_url": "https://github.com/npmccallum",
+      "followers_url": "https://api.github.com/users/npmccallum/followers",
+      "following_url": "https://api.github.com/users/npmccallum/following{/other_user}",
+      "gists_url": "https://api.github.com/users/npmccallum/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/npmccallum/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/npmccallum/subscriptions",
+      "organizations_url": "https://api.github.com/users/npmccallum/orgs",
+      "repos_url": "https://api.github.com/users/npmccallum/repos",
+      "events_url": "https://api.github.com/users/npmccallum/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/npmccallum/received_events",
+      "type": "User",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "b900967f6fbfae098ced9dfeab7b2b51e1a22c0a",
+        "url": "https://api.github.com/repos/akheron/jansson/commits/b900967f6fbfae098ced9dfeab7b2b51e1a22c0a",
+        "html_url": "https://github.com/akheron/jansson/commit/b900967f6fbfae098ced9dfeab7b2b51e1a22c0a"
+      }
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+{
+    "desc": {
+        "nom_keyspace": "emp",
+        "nb_tables": 3
+        
+    },
+    "tables_list": {
+        "table1":{
+			"desc_table":{
+				"columns_t": {
+					    "emp_id": {
+						"type_c": "int",
+						"prk_c": true
+					    },
+					    "emp_name": {
+						"type_c": "string",
+						"prk_c": false
+					    },
+					    "emp_city": {
+						"type_c": "string",
+						"prk_c": false
+					    },
+					    "emp_sal": {
+						"type_c": "int",
+						"prk_c": false
+					    },
+					    "emp_phone": {
+						"type_c": "int",
+						"prk_c": false
+					    }
+				},
+				"pro_desc_2":{}
+
+			},
+			"data":[
+				[1,"sennane","rabat",10000.20,"06217476"],
+				[1,"sennane","rabat",10000.20,"06217476"],
+				[1,"sennane","rabat",10000.20,"06217476"]
+
+			]
+        }
+}

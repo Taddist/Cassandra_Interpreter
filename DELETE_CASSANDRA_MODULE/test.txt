@@ -1,0 +1,33 @@
+Rayon INT 4;
+REM CASTING IMPLICITE de 0 vers 0.0
+Perimetre DOUBLE 0;
+Surface DOUBLE 0.0;
+Pi DOUBLE 3.14;
+surfacecorrecte BOOL FALSE;
+perimetrecorrect BOOL FALSE;
+
+BEGIN
+
+	REM CASTING IMPLICITE de Rayon vers (DOUBLE) Rayon
+
+	Perimetre = 2.0 * Pi * Rayon;
+	Surface = Pi * Rayon * Rayon;
+	PRINT Rayon;
+	PRINT Perimetre;
+	PRINT Surface;
+	IF (Surface == ((3.14 * 4.0) * 4.0) ) THEN
+		surfacecorrecte = TRUE;
+
+		REM CASTING IMPLICIT DE 4
+
+		IF (Perimetre == (2.0 * (3.14 * 4)) ) THEN
+			perimetrecorrect = TRUE;
+		ELSE
+			perimetrecorrect = FALSE;
+		ENDIF
+	ELSE
+		surfacecorrecte = FALSE;
+	ENDIF
+	PRINT surfacecorrecte;
+	PRINT perimetrecorrect;
+END

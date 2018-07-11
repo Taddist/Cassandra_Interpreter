@@ -1,0 +1,200 @@
+CREATE KEYSPACE aa WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3};
+CREATE KEYSPACE Excalibur WITH replication = {'class': 'NetworkTopologyStrategy', 'DC1' : 1 , 'DC2' : 3} AND durable_writes = false;
+
+
+
+CREATE TABLE monkeySpecies (species text PRIMARY KEY,common_name text,population varint,average_size int) WITH comment='Important biological records'AND read_repair_chance = 1.0;
+
+CREATE TABLE timeline (userid uuid,posted_month int,posted_time uuid,body text,posted_by text,PRIMARY KEY (userid, posted_month, posted_time)) WITH compaction = { 'class' : 'LeveledCompactionStrategy' };
+
+
+
+
+CREATE INDEX userIndex ON NerdMovies (userr);
+
+CREATE  INDEX ON users (keys(favs));
+
+CREATE  INDEX ON users (email) USING 'path.to.the.IndexClass';
+
+CREATE CUSTOM INDEX  userIndex ON users (email) USING 'path.to.the.IndexClass' WITH OPTIONS ={'storage': '/mnt/ssd/indexes/'};
+
+USE myApp;
+
+USE "myApp";
+
+
+SELECT JSON name, occupation FROM users WHERE userid IN (199, 200, 207);
+
+SELECT JSON name, occupation FROM users WHERE userid = 199;
+
+SELECT name AS user_name, occupation AS user_occupation FROM users;
+
+SELECT tim, value FROM events WHERE event_type = 'myEvent' AND tim > '2011-02-03' AND tim<= '2012-01-01' ;
+SELECT COUNT(*) FROM users;
+SELECT COUNT(*) AS user_count FROM users;
+
+
+DROP FUNCTION IF EXISTS myfunction;
+
+DROP FUNCTION mykeyspace.afunction;
+
+DROP FUNCTION IF EXISTS mykeyspace.afunction;
+
+DROP FUNCTION afunction ( int );
+
+DROP FUNCTION afunction ( text );
+
+DROP FUNCTION afunction ( set<text> , list <int> , map<double,boolean> );
+
+DROP function afunction ($$string$$,  text , list<int>);
+
+DROP FUNCTION afunction ( tuple<text,int,double,boolean> );
+
+
+DROP AGGREGATE myfunction;
+
+DROP AGGREGATE IF EXISTS myfunction;
+
+DROP AGGREGATE mykeyspace.afunction;
+
+DROP AGGREGATE IF EXISTS mykeyspace.afunction;
+
+DROP AGGREGATE afunction ( int );
+
+DROP AGGREGATE afunction ( text );
+
+DROP AGGREGATE afunction ( set<text> , list <int> , map<double,boolean> );
+
+DROP AGGREGATE afunction ($$string$$,  text , list<int>);
+
+DROP AGGREGATE afunction ( tuple<text,int,double,boolean> );
+
+
+DROP KEYSPACE myApp;
+
+DROP KEYSPACE  IF EXISTS myapp;
+
+DROP ROLE alice;
+
+DROP ROLE IF EXISTS bob;
+
+DROP USER alice;
+
+DROP USER IF EXISTS users;
+
+DROP TABLE worldSeriesAttendees;
+
+DROP TABLE IF EXISTS worldSeriesAttendees;
+
+DROP TABLE worldSeries.Attendees;
+
+
+DROP TYPE worldSeriesAttendees;
+
+DROP TYPE IF EXISTS worldSeriesAttendees;
+
+DROP TYPE worldSeries.Attendees;
+
+
+DROP MATERIALIZED VIEW monkeySpecies_by_population;
+
+DROP MATERIALIZED VIEW IF EXISTS monkeySpecies_by_population;
+
+DROP MATERIALIZED VIEW monkeySpecies.by_population;
+
+
+
+DROP INDEX userIndex;
+
+DROP INDEX IF EXISTS  userIndex;
+
+DROP INDEX userkeyspace.address_index;
+
+DROP INDEX IF EXISTS userkeyspace.address_index;
+
+
+DROP TRIGGER myTrigger ON myTable;
+
+DROP TRIGGER IF EXISTS myTrigger ON myTable;
+
+DROP TRIGGER "myTrigger" ON myTable;
+
+DROP TRIGGER IF EXISTS myTrigger ON myTable.x;
+
+
+
+
+
+
+INSERT INTO NerdMovies (movie, director, main_actor, year) VALUES ('Serenity', 'Joss Whedon', 'Nathan Fillion',20);
+
+INSERT INTO NerdMovies (movie, director, main_actor, year)VALUES ('Serenity', 'Joss Whedon', 'Nathan Fillion', 2005) USING TTL 86400;
+
+INSERT INTO NerdMovies JSON '{"movie": "Serenity", "director": "Joss Whedon", "year": 2005}';
+
+INSERT INTO atable (pk, val) VALUES (1,1);
+
+INSERT INTO mytable JSON '{"\"myKey\"": 0, "value": 0}';
+
+INSERT INTO test(pk, t, v, s) VALUES (0, 0, 'val0', 'static0') if not exists ;
+
+INSERT INTO NerdMovies (movie, director, main_actor, year)VALUES ('Serenity', 'Joss Whedon', 'Nathan Fillion', 2005) USING TTL 86400 and TIMESTAMP 1458 ;
+
+INSERT INTO users (userid, password, name) VALUES ('user2', 'ch@ngem3b', 'second user');
+
+INSERT INTO users (userid, password) VALUES ('user4', 'ch@ngem3c');
+
+INSERT INTO plays (id, game, players, scores)  VALUES ('123-afde', 'quake', 3, [17, 4, 2]);
+
+INSERT INTO images (name, owner, date, tags) VALUES ('cat.jpg', 'jsmith', 'now', { 'kitten', 'cat', 'pet' });
+
+INSERT INTO users (id, given, surname, favs) VALUES ('jsmith', 'John', 'Smith', { 'fruit' : 'apple', 'band' : 'Beatles' });
+
+
+
+
+
+
+CREATE KEYSPACE Excalibur WITH durable_writes = true AND durable_writes = 25 ;
+
+CREATE KEYSPACE Excelsior WITH replication = $$njuhuygb biukgh  $$ ;
+
+CREATE KEYSPACE Excelsior WITH replication = {'class': 'SimpleStrategy', 'replication_factor' : 3}  ;
+
+CREATE KEYSPACE Excalibur WITH replication = {'class': 'NetworkTopologyStrategy', 'DC1' : 1, 'DC2' : 3} AND durable_writes = false;
+
+
+
+UPDATE NerdMovies USING TTL 400 SET director = 'Joss Whedon', main_actor = 'Nathan Fillion', year = 2005 WHERE movie = 'Serenity' ; 
+
+UPDATE NerdMovies SET director = 'Joss Whedon', main_actor = 'Nathan Fillion', year = 2005 WHERE movie = 'Serenity' ;
+
+UPDATE NerdMovies USING TIMESTAMP 400 SET director = 'Joss Whedon', main_actor = 'Nathan Fillion', year = 2005 WHERE movie = 'Serenity' ; 
+
+UPDATE users SET password = 'ps22dhds' WHERE userid = 'user3';
+
+
+
+
+DELETE FROM NerdMovies USING TIMESTAMP 1240003134 WHERE movie = 'Serenity';7
+
+
+BEGIN BATCH
+INSERT INTO users (userid, password, name) VALUES ('user2', 'ch@ngem3b', 'second user');
+UPDATE users SET password = 'ps22dhds' WHERE userid = 'user3';
+INSERT INTO users (userid, password) VALUES ('user4', 'ch@ngem3c');
+DELETE name FROM users WHERE userid = 'user1';
+APPLY BATCH;
+
+CREATE TABLE emp( emp_id int PRIMARY KEY, emp_name text, emp_city text, emp_sal varint, emp_phone varint )WITH comment='Important empl records';
+
+INSERT INTO emp (emp_id, emp_name, emp_city,emp_phone, emp_sal) VALUES(4,'ali', 'agadir', 54328762476, 3000);
+
+INSERT INTO emp (emp_id, emp_name, emp_city,emp_phone, emp_sal) VALUES(5,'said', 'tanger', 063745264, 6000);
+
+select emp_id, emp_name, emp_city from emp where emp_id in(1,4) ;
+
+CREATE TABLE persones( p_id int PRIMARY KEY, p_name text)WITH comment='Important empl records';
+
+
+select * from emp where emp_id < ast [  ( 1 + 3 ) * 2 ] ;

@@ -1,0 +1,21 @@
+delete emp_name from table1 where  emp_city='agadir';
+
+delete emp_name from table1 where emp_name='test8' ;
+
+delete from table1 where emp_name='test8';
+
+delete from table1 where emp_id=8 ;
+
+delete emp_name,emp_city,emp_sal from table1 where emp_id=8 ;
+
+// errors:
+	column not found 
+		delete emp_name from table1 where  city='agadir';
+
+	keyspace not found (keyspace diff from current one )
+		delete emp_name from ensias.table1 where emp_name='test8' ;
+
+	table not found 
+		delete from table5 where emp_id=8 ;
+	
+

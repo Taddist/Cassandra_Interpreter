@@ -1,0 +1,34 @@
+PROG : LISTE_DECL begin LISTE_INST end
+
+LISTE_INST : INST LISTE_INSTAUX
+
+LISTE_INSTAUX : LISTE_INST  | epsilon
+
+LISTE_DECL : DECL LISTE_DECLAUX 
+
+LISTE_DECLAUX : LISTE_DECL | epsilon
+
+DECL : idf TYPE DECL_AUX
+
+DECL_AUX : CONST ';' | ';'
+
+TYPE : int | bool ==>TYPE : int | bool | double ; 
+
+CONST : inumber | dnumber | true | false
+
+INST : idf = CONST ';' ==>  INST : idf = ADDSUB ';' | true ';' | false ';' 
+	| if ‘(‘ idf == CONST ‘)’ then LISTE_INST IF_INSTAUX ==> if ‘(‘ idf == ADDSUB ‘)’ then LISTE_INST IF_INSTAUX 
+	| print IDF ';'
+	| for IDF = inumber to inumber do LISTE_INST endfor
+
+IF_INSTAUX :  endif  | else LISTE_INST endif
+
+ADDSUB : MULTDIV ADDSUBAUX
+
+ADDSUBAUX : – MULTDIV ADDSUBAUX | + MULTDIV ADDSUBAUX | epsilon
+
+MULTDIV : AUX MULTDIVAUX
+
+MULTDIVAUX : * AUX MULTDIVAUX | / AUX MULTDIVAUX | epsilon
+
+AUX : idf | inumber | dnumber | ( ADDSUB )
